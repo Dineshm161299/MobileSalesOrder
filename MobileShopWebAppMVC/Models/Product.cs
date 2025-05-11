@@ -11,14 +11,22 @@ namespace MobileShopWebAppMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Product
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
         public string ProductName { get; set; }
         public Nullable<int> Category_List { get; set; }
         public Nullable<int> Brand_List { get; set; }
+
+        [Required]
         public Nullable<int> Qty { get; set; }
+
+        [Required]
         public Nullable<decimal> Price { get; set; }
     
         public virtual Brand Brand { get; set; }
